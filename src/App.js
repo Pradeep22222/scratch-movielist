@@ -1,14 +1,15 @@
-import './App.css';
+import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { SearchForm } from './components/SearchForm';
-import { MovieCard } from './components/MovieCard';
-import { MovieArea } from './components/MovieArea';
-import { useState } from 'react';
+import { SearchForm } from "./components/SearchForm";
+import { MovieCard } from "./components/MovieCard";
+import { MovieArea } from "./components/MovieArea";
+import { useState } from "react";
+import { getMovie } from "./components/helpers/AxiosHelper";
 function App() {
   const [str, setStr] = useState("");
   const handleOnSubmit = (movieName) => {
-    console.log(movieName)
-  }
+    setStr(movieName);
+  };
   return (
     <div>
       <SearchForm handleOnSubmit={handleOnSubmit}></SearchForm>
